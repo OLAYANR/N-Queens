@@ -1,7 +1,7 @@
 OBJS = nq.o
 CC = gcc
 DEBUG = -g
-CFLAGS = -Wall -c $(DEBUG)
+CFLAGS = -O3 -Wall -c $(DEBUG)
 LFLAGS = -Wall $(DEBUG)
 N= 
 
