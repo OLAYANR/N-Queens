@@ -1,9 +1,15 @@
+OBJS = nq.o
+CC = gcc
+DEBUG = -g
+CFLAGS = -Wall -c $(DEBUG)
+LFLAGS = -Wall $(DEBUG)
 N= 
-nqueen :nq.o 
-	gcc -o nqueen nq.o
-		
+
+nqueen : $(OBJS)
+	$(CC) $(LFLAGS) $(OBJS) -o nqueen
+	
 nq.o : nq.c
-	gcc -c nq.c
+	$(CC) $(CFLAGS) nq.c
 
 readme: 
 	@echo "This program calculates the total number of solutions to the N Queens problem"\
@@ -16,4 +22,6 @@ run :
 .PHONY : clean
 
 clean :
-	-rm nqueen nq.o
+	-rm *.o *~ nqueen
+
+
